@@ -2,11 +2,11 @@
 Feature: Smoke steps
 
   @predefined1
-  Scenario: Predefined steps for Google
-    Given I open url "https://google.com"
-    Then I should see page title as "Google"
-    Then element with xpath "//*[@name='q']" should be present
-    When I type "Cucumber" into element with xpath "//*[@name='q']"
-    Then I click on element using JavaScript with xpath "(//input[@name='btnK'])[1]"
-    Then I wait for element with xpath "//*[@id='res']" to be present
-    Then element with xpath "//*[@id='res']" should contain text "Cucumber"
+
+  Scenario: Test https://duckduckgo.com search functionality
+    Given I open url "https://duckduckgo.com/"
+    Then I type "tomatoes" into element with xpath "//input[@id='searchbox_input']"
+    And I click on element with xpath "//button[@type='submit']"
+    Then element with xpath "//input[@id='search_form_input']" should be present
+    Then element with xpath "//input[@id='search_form_input']" should have attribute "value" as "tomatoes"
+    Then element with xpath "//div[@id='react-layout']" should contain text "tomatoes"

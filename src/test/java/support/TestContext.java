@@ -64,11 +64,11 @@ public class TestContext {
                     chromeOptions.addArguments("--remote-allow-origins=*");
                     chromeOptions.setExperimentalOption("prefs", chromePreferences);
                     System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
-                    if (isHeadless) {
+                 /*   if (isHeadless) {
                         chromeOptions.setHeadless(true);
                         chromeOptions.addArguments("--window-size=" + size.getWidth() + "," + size.getWidth());
                         chromeOptions.addArguments("--disable-gpu");
-                    }
+                    }*/
                     ChromeDriverService service = new ChromeDriverService.Builder()
                             .withLogOutput(System.out)
                             .build();
